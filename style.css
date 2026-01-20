@@ -11,4 +11,5 @@ font-family: "Pudelinka";
 src: url("Fonts/pudelinka.ttf" ) format("truetype");
 font-weight: normal;
 font-style: normal;
+}
 p.zz{font-family: "Pudelinka" ;}
