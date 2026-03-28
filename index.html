@@ -111,13 +111,77 @@ plt.show()
 
     
 <р>21 марта 2026 г.</р»
-📋 Отчёт по модели кредитования
-        Дата: 21 марта 2026 г.  
-Показатель точности: `0.69`
+<!-- Начало блока отчёта -->
+<style>
+    .report-card {
+        background: white;
+        border-radius: 16px;
+        padding: 2rem;
+        max-width: 500px;
+        margin: 2rem auto;
+        box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        border-left: 5px solid #6366f1;
+        font-family: 'Inter', sans-serif;
+    }
+    .report-title {
+        font-size: 1.25rem;
+        font-weight: 700;
+        color: #1e1b4b;
+        margin-bottom: 1rem;
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+    }
+    .report-info {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 1.5rem;
+        color: #64748b;
+        font-size: 0.9rem;
+    }
+    .accuracy-box {
+        background: linear-gradient(135deg, #6366f1 0%, #ec4899 100%);
+        color: white;
+        padding: 1rem;
+        border-radius: 12px;
+        text-align: center;
+    }
+    .accuracy-value {
+        font-size: 2.5rem;
+        font-weight: 700;
+        line-height: 1;
+    }
+    .accuracy-label {
+        font-size: 0.85rem;
+        opacity: 0.9;
+        margin-top: 0.5rem;
+    }
+    .badge {
+        background: #f1f5f9;
+        padding: 0.25rem 0.75rem;
+        border-radius: 50px;
+        font-weight: 600;
+        color: #475569;
+    }
+</style>
 
-100
-        </head>
--body>
+<div class="report-card">
+    <div class="report-title">
+        <span>📋</span> Отчёт по модели кредитования
+    </div>
+    
+    <div class="report-info">
+        <span>📅 21 марта 2026 г.</span>
+        <span class="badge">N=100</span>
+    </div>
+
+    <div class="accuracy-box">
+        <div class="accuracy-value">0.69</div>
+        <div class="accuracy-label">Показатель точности (Accuracy)</div>
+    </div>
+</div>
+<!-- Конец блока отчёта -->
     
 <р>28 марта 2026 г.</р»
     <meta charset="UTF-8">
