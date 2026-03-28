@@ -120,11 +120,117 @@ plt.show()
 -body>
     
 <р>28 марта 2026 г.</р»
-# 🧠 Нейронная сеть: Предсказание успеваемости
-## 📊 Результаты
-| Метрика | Train | Test |
-|---------|-------|------|
-| **R²** | 0.7345 | 0.7771 |
-| **MAE** | 0.0594 | 0.0545 |
-| **RMSE** | 0.0745 | 0.0710 |
-## 🏗️ Архитектура
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Нейронная сеть: Предсказание успеваемости</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Inter', sans-serif; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); padding: 2rem; min-height: 100vh; }
+        .container { max-width: 900px; margin: 0 auto; background: white; border-radius: 20px; padding: 3rem; box-shadow: 0 20px 60px rgba(0,0,0,0.3); }
+        h1 { text-align: center; color: #1e1b4b; margin-bottom: 0.5rem; font-size: 2rem; }
+        .subtitle { text-align: center; color: #64748b; margin-bottom: 2rem; }
+        .metrics { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1.5rem; margin: 2rem 0; }
+        .metric-card { background: linear-gradient(135deg, #6366f1 0%, #8b5cf6 100%); color: white; padding: 1.5rem; border-radius: 15px; text-align: center; }
+        .metric-card.test { background: linear-gradient(135deg, #ec4899 0%, #f43f5e 100%); }
+        .metric-value { font-size: 2.5rem; font-weight: 700; margin: 0.5rem 0; }
+        .metric-label { font-size: 0.9rem; opacity: 0.9; }
+        .section { margin: 2rem 0; padding: 1.5rem; background: #f8fafc; border-radius: 15px; }
+        .section-title { font-size: 1.3rem; color: #1e1b4b; margin-bottom: 1rem; font-weight: 600; }
+        .progress-item { margin: 1rem 0; }
+        .progress-label { display: flex; justify-content: space-between; margin-bottom: 0.5rem; font-size: 0.9rem; }
+        .progress-bar { height: 10px; background: #e2e8f0; border-radius: 5px; overflow: hidden; }
+        .progress-fill { height: 100%; background: linear-gradient(135deg, #6366f1 0%, #ec4899 100%); border-radius: 5px; }
+        .features { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 1rem; margin-top: 1rem; }
+        .feature { background: white; padding: 1rem; border-radius: 10px; text-align: center; border: 2px solid #e2e8f0; }
+        .feature-name { font-weight: 600; color: #1e1b4b; margin-bottom: 0.5rem; }
+        .feature-value { font-size: 1.2rem; color: #6366f1; font-weight: 700; }
+        .highlight { background: #fef3c7; padding: 1rem; border-left: 4px solid #f59e0b; border-radius: 5px; margin-top: 1rem; }
+        .badge { display: inline-block; background: #10b981; color: white; padding: 0.25rem 1rem; border-radius: 50px; font-size: 0.85rem; margin: 0.5rem 0.25rem; }
+        @media (max-width: 600px) { .container { padding: 1.5rem; } h1 { font-size: 1.5rem; } .metric-value { font-size: 2rem; } }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🧠 Нейронная сеть</h1>
+        <p class="subtitle">Предсказание успеваемости студентов</p>
+        
+        <div style="text-align: center; margin-bottom: 2rem;">
+            <span class="badge">📊 1000 строк</span>
+            <span class="badge">🎯 4 признака</span>
+            <span class="badge">⚡ 10,000 эпох</span>
+        </div>
+
+        <div class="metrics">
+            <div class="metric-card">
+                <div class="metric-label">📚 Обучающая выборка (800)</div>
+                <div class="metric-value">0.7253</div>
+                <div>R² Score</div>
+                <div style="margin-top: 0.5rem; font-size: 0.85rem; opacity: 0.9;">MAE: 0.0618 | RMSE: 0.0758</div>
+            </div>
+            <div class="metric-card test">
+                <div class="metric-label">🧪 Тестовая выборка (200)</div>
+                <div class="metric-value">0.7408</div>
+                <div>R² Score</div>
+                <div style="margin-top: 0.5rem; font-size: 0.85rem; opacity: 0.9;">MAE: 0.0628 | RMSE: 0.0766</div>
+            </div>
+        </div>
+
+        <div class="section">
+            <div class="section-title">📉 Снижение ошибки (Loss)</div>
+            <div class="progress-item">
+                <div class="progress-label"><span>Epoch 0</span><span>0.1136</span></div>
+                <div class="progress-bar"><div class="progress-fill" style="width: 100%"></div></div>
+            </div>
+            <div class="progress-item">
+                <div class="progress-label"><span>Epoch 3000</span><span>0.0098</span></div>
+                <div class="progress-bar"><div class="progress-fill" style="width: 65%"></div></div>
+            </div>
+            <div class="progress-item">
+                <div class="progress-label"><span>Epoch 6000</span><span>0.0071</span></div>
+                <div class="progress-bar"><div class="progress-fill" style="width: 50%"></div></div>
+            </div>
+            <div class="progress-item">
+                <div class="progress-label"><span>Epoch 9000</span><span>0.0068</span></div>
+                <div class="progress-bar"><div class="progress-fill" style="width: 45%"></div></div>
+            </div>
+        </div>
+
+        <div class="section">
+            <div class="section-title">⭐ Важность признаков</div>
+            <div class="features">
+                <div class="feature">
+                    <div class="feature-name">Gender</div>
+                    <div class="feature-value">3.30</div>
+                </div>
+                <div class="feature">
+                    <div class="feature-name">Lunch</div>
+                    <div class="feature-value">2.89</div>
+                </div>
+                <div class="feature">
+                    <div class="feature-name">Test Prep</div>
+                    <div class="feature-value">2.15</div>
+                </div>
+                <div class="feature" style="border-color: #6366f1; background: #f0f0ff;">
+                    <div class="feature-name">🏆 Math Score</div>
+                    <div class="feature-value">4.89</div>
+                </div>
+            </div>
+            <div class="highlight">
+                <strong>💡 Вывод:</strong> Math Score — самый важный признак! Это логично, так как навыки математики и чтения коррелируют.
+            </div>
+        </div>
+
+        <div class="section" style="text-align: center;">
+            <div class="section-title">🏗️ Архитектура</div>
+            <p style="font-size: 1.1rem; color: #64748b;">
+                <strong>Вход (4)</strong> → <strong>Скрытый (8, sigmoid)</strong> → <strong>Выход (1)</strong>
+            </p>
+            <p style="margin-top: 1rem; color: #64748b;">Learning Rate: 0.1 | Эпох: 10,000</p>
+        </div>
+    </div>
+</body>
+</html>
