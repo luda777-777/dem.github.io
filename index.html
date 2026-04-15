@@ -295,9 +295,48 @@ plt.show()
   </a>
 </p>
 
-     .lime-block {
-  background-color: #D4EDB5; /* нежно-лаймовый */
-  padding: 20px;
-  border-radius: 10px;
-  color: #2d3748; /* тёмный текст для контраста */
-}
+    <!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Мой сайт</title>
+  <style>
+    /* 🎨 Стили для нежно-лаймового блока */
+    .lime-block {
+      background-color: #D4EDB5; /* нежно-лаймовый */
+      padding: 24px;
+      border-radius: 12px;
+      color: #2d3748;            /* тёмный текст для контраста */
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+      margin: 20px 0;
+      transition: transform 0.2s ease;
+    }
+
+    .lime-block:hover {
+      transform: translateY(-2px); /* лёгкий эффект при наведении */
+    }
+
+    /* Опционально: стиль для заголовка внутри блока */
+    .lime-block h3 {
+      margin-top: 0;
+      color: #1a202c;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- 🟩 Ваш лаймовый блок -->
+  <div class="lime-block">
+    <h3>Заголовок блока</h3>
+    <p>Здесь ваш контент. Фон — нежно-лаймовый цвет #D4EDB5.</p>
+  </div>
+
+  <!-- Можно добавить ещё блоков -->
+  <div class="lime-block">
+    <p>Ещё один блок с тем же стилем! 🌿</p>
+  </div>
+
+</body>
+</html>
+ 
